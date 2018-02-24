@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script src="http://malsup.github.com/jquery.cycle2.js"></script>
+        <title>SlideShow</title>
+        <style type="text/css">
+            *{
+                margin:0;
+                padding:0;
+            }
+            #container {
+                width: 100%;
+                height: 99vh;
+                position: relative;
+                }
+            #slideshow {
+                height:100%;
+                width:100%;
+                left: 38%;
+                }
+            #slideshow img {
+                height:80%;
+                /* width:100%; */
+                position: absolute;
+                left: 38%;
+                z-index:10;
+                }
+            #no-template-pager {
+                height:120px;
+                margin-left: 25%;
+                /* width:100%; */
+                background:rgba(0,0,0,0.5);
+                position:absolute;
+                bottom:2%;
+                z-index:1000;
+                text-align:center;
+                opacity:0.4;
+                transition:all .2s ease-in-out 0s;
+                }
+            #no-template-pager:hover {
+                opacity:1;
+                }
+            #no-template-pager img {
+                margin: 10px 5px;
+                opacity:0.3;
+                transition:all .3s ease-in-out 0s;
+                }
+            #no-template-pager img:hover {
+                opacity:1;
+                transform:scale(1.05);
+                z-index:100;
+                }
+            #prev_c {
+                height:120px;
+                width:200px;
+                color: black;
+                fill: black;
+                position:absolute;
+                left:0;
+                top:0;
+                z-index:100;
+                }
+                #prev_c span {
+                    height:120px;
+                    width:120px;
+                    position:absolute;
+                    top:0;
+                    bottom:0;
+                    left:0;
+                    margin:auto 0px;
+                    }
+                
+            #next_c {
+                height:120px;
+                width:120px;
+                position:absolute;
+                right:0;
+                top:0;
+                z-index:100;
+                }
+                #next_c span {
+                    height:120px;
+                    width:120px;
+                    position:absolute;
+                    top:0;
+                    bottom:0;
+                    right:0;
+                    margin:auto 0px;
+                    }
+                #next #prev { visibility:hidden;}
+                #next,#prev:hover {
+                    cursor:pointer;
+                    }
+                #next_c,#prev_c:hover #next,#prev { visibility:visible;}
+                
+            </style>
+    </head>
+    <body>
+        <nav class="nav">
+            <a href="{{url_for('mainPage')}} ">Home</a>
+            <a href="{{url_for('slideshow')}} ">Album</a>
+        </nav>
+        <hr class="nav__line u-margin-bottom-medium">
+
+        <div id="container">
+            <div id="slideshow" class="cycle-slideshow" 
+            data-cycle-fx="fade" 
+            data-cycle-manual-fx="scrollHorz" 
+            data-cycle-pager-fx = "fade" 
+            data-cycle-manual-speed="400"
+            data-cycle-prev="#prev"  	
+            data-cycle-next="#next"
+            data-cycle-speed="600"  
+            data-cycle-timeout="3000" 
+            data-cycle-pager = "#no-template-pager"
+            data-cycle-pause-on-hover="true"
+            data-cycle-pager-template=""
+                > 
+               
+                <img src="https://image.ibb.co/hz3i0x/pre_wedding_76.jpg"  id="intro_img"/>
+                <img src="https://image.ibb.co/eUB30x/pre_wedding_71.jpg"  id="intro_img"/>
+                <img src="https://image.ibb.co/fGw8YH/pre_wedding_64.jpg"  id="intro_img"/>
+                <img src="https://image.ibb.co/m1dVDH/pre_wedding_22.jpg"  id="intro_img"/>
+                <img src="https://image.ibb.co/eyvctH/pre_wedding_45.jpg"  id="intro_img"/>
+                <img src="https://image.ibb.co/jdNwnc/pre_wedding_34.jpg"  id="intro_img"/>
+                <img src="https://image.ibb.co/iaentH/pre_wedding_42.jpg"  id="intro_img"/>
+            </div>
+
+            
+        
+            <div id='no-template-pager' class="cycle-pager external">
+                    <img src="https://thumb.ibb.co/cDY5DH/pre_wedding_76.jpg" alt="pre wedding 76"  height=100 />
+                    <img src="https://thumb.ibb.co/mvzCtH/pre_wedding_71.jpg" alt="pre wedding 76"  height=100 />
+                    <img src="https://thumb.ibb.co/iDPHSc/pre_wedding_64.jpg" alt="pre wedding 76"  height=100 />
+                    <img src="https://thumb.ibb.co/gWao0x/pre_wedding_22.jpg" alt="pre wedding 76"  height=100 />
+                    <img src="https://thumb.ibb.co/b0RT0x/pre_wedding_45.jpg" alt="pre wedding 76"  height=100 />
+                    <img src="https://thumb.ibb.co/ePj97c/pre_wedding_34.jpg" alt="pre wedding 76"  height=100 />
+                    <img src="https://thumb.ibb.co/b18fDH/pre_wedding_42.jpg" alt="pre wedding 76"  height=100 />
+            </div>
+                
+                <div id="prev_c"><span id="prev">&#8250;</span></div>
+                <div id="next_c"><span id="next">&#8250;</span></div>
+        </div>
+        <a href="{{url_for('mainPage')}} ">Back</a>
+    </body>
+</html>
+                   

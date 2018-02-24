@@ -1,0 +1,197 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+  background-color: #fff0e8; }
+  @media only screen and (max-width: 56.25em) {
+    body {
+      padding: 0; } }
+
+.container {
+  padding: 1rem; }
+
+body {
+  font-family: 'PitchWeb', Courier, monospace;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  line-height: 1.7;
+  color: #5c5858; }
+
+.heading__secondary {
+  font-size: 3.6rem;
+  font-weight: 200;
+  text-transform: capitalize; }
+
+.u-center-text {
+  text-align: center !important; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem !important; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important; }
+  @media only screen and (max-width: 56.25em) {
+    .u-margin-bottom-medium {
+      margin-bottom: 3rem !important; } }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem !important; }
+  @media only screen and (max-width: 56.25em) {
+    .u-margin-bottom-big {
+      margin-bottom: 5rem !important; } }
+
+.u-margin-top-big {
+  margin-top: 8rem !important; }
+
+.u-margin-top-huge {
+  margin-top: 10rem !important; }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: .15;
+  overflow: hidden; }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
+
+.card {
+  margin: auto;
+  height: 100%;
+  overflow: scroll;
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase; }
+  .card > * {
+    display: block;
+    margin: 3rem 0;
+    margin-top: 0; }
+  .card__name--groom {
+    font-weight: bold; }
+  .card__date {
+    font-size: 3rem;
+    text-transform: uppercase;
+    display: block; }
+  .card__location--link:link, .card__location--link:visited {
+    color: #e06822;
+    text-decoration: none; }
+  .card__reception > * {
+    display: block;
+    margin: 3rem 0;
+    margin-top: 0; }
+  .card__heading {
+    font-size: 5rem;
+    font-family: 'Petit Formal Script', cursive;
+    text-transform: uppercase;
+    color: red;
+    display: block; }
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1; }
+  .container > * {
+    flex-grow: 1;
+    flex-basis: 30rem;
+    height: 85vh; }
+
+.nav {
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem; }
+  .nav a:link,
+  .nav a:visited {
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid grey;
+    padding: 1rem 4rem;
+    border-radius: 10px;
+    transition: all .3s; }
+    .nav a:link:hover,
+    .nav a:visited:hover {
+      color: #e06824; }
+  .nav__line {
+    width: 70%;
+    color: #979696;
+    margin: auto; }
+
+.section__a {
+  text-align: center; }
+
+.section__b img {
+  height: 80vh;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2); }
+
+.section__c {
+  padding: 3rem;
+  padding-top: 0; }
